@@ -3,12 +3,12 @@ import os
 import csv
 
 #Define path to budget_data csv
-budget_csv_input = os.path.join('..', 'Assignment 3', 'challenge3-python', 'Resources', 'budget_data.csv')
+budget_csv_input = os.path.join('..', 'Assignment 3', 'Python-challenge3', 'Resources', 'budget_data.csv')
 
 #Read budget_data file
 with open(budget_csv_input, encoding='utf') as budgetfile:
     csvreader = csv.reader(budgetfile, delimiter=',')
-    next(budgetfile, None) #To not count the header in calculations
+    csv_header = next(csvreader) #To not count the header in calculations but store the value
 
 # Define variables for the for loop
     totalmonths = 0
@@ -70,7 +70,7 @@ with open(budget_csv_input, encoding='utf') as budgetfile:
     print(f'Greatest Increase in Profits: {greatest_decrease_month} (${greatest_decrease})')    
 
 # Define path for txt file output
-budget_txt_output = os.path.join('..', 'Assignment 3', 'challenge3-python', 'Analysis', 'budget_data_analysis.txt')
+budget_txt_output = os.path.join('..', 'Assignment 3', 'Python-challenge3', 'Analysis', 'budget_data_analysis.txt')
 
 #Write txt file with analysis
 with open(budget_txt_output, 'w') as pybank_txt:
